@@ -1,0 +1,10 @@
+{
+  "name": "smith-waterman",
+  "version": "0.0.0",
+  "description": "smith-waterman algorithm",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ttrfstud/smith-waterman.git"
+  }
+}
