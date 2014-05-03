@@ -1,3 +1,9 @@
+var mmatch = require('./fn/mmatch');
+var deletion = require('./fn/deletion');
+var insertion = require('./fn/insertion');
+var defdir = require('./fn/defdir');
+var restorelm = require('./fn/restorelm');
+
 function sw(seq1, seq2, gss, simfunc) {
   var len1, len2;
   var i, j;
@@ -29,7 +35,7 @@ function sw(seq1, seq2, gss, simfunc) {
 
   for (i = 1; i < len1 + 1; i++) {
     for (j = 1; j < len2 + 1; j++) {
-      mmscore = mmatch(H, i, j, simfunc);
+      mmscore = mmatch(H, i, j, seq1, seq2, simfunc);
       delscore = deletion(H, i, j, gss);
       inscore = insertion(H, i, j, gss);
 
@@ -38,7 +44,7 @@ function sw(seq1, seq2, gss, simfunc) {
     }
   }
 
-  longestmatch = restore(H);
+  longestmatch = restorelm(H);
 
   return longestmatch;
 }
