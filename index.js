@@ -7,7 +7,7 @@ var restorelm = require('./fn/restorelm');
 function sw(seq1, seq2, gss, simfunc) {
   var len1, len2;
   var i, j;
-  var H;
+  var H, T;
 
   var mmscore;
   var delscore;
@@ -19,18 +19,23 @@ function sw(seq1, seq2, gss, simfunc) {
   len2 = seq2.length;
 
   H = [];
+  T = [];
   H[0] = [];
+  T[0] = [];
 
   for (i = 0; i < len2; i++) {
     H[0][i] = 0;
+    T[0][i] = 0;
   }
 
   for (i = 0; i < len1; i++) {
     if (!H[i]) {
       H[i] = [];
+      T[i] = [];
     }
 
     H[i][0] = 0;
+    T[i][0] = 0;
   }
 
   for (i = 1; i < len1 + 1; i++) {
@@ -40,11 +45,11 @@ function sw(seq1, seq2, gss, simfunc) {
       inscore = insertion(H, i, j, gss);
 
       H[i][j] = Math.max(0, mmscore, delscore, inscore);
-      H[i][j] = defdir(H[i][j], mmscore, delscore, inscore);
+      T[i][j] = defdir(H[i][j], mmscore, delscore, inscore);
     }
   }
 
-  longestmatch = restorelm(H);
+  longestmatch = restorelm(H, T);
 
   return longestmatch;
 }
