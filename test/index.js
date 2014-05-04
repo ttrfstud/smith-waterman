@@ -42,4 +42,42 @@ describe('sw', function () {
 
 		done();
 	});
+
+	it('paper test', function (done) {
+		var seq1;
+		var seq2;
+		var simfunc;
+		var gss;
+
+		var res;
+
+		seq1 = 'AAUGCCAUUGACGG';
+		seq2 = 'CAGCCUCGCUUAG';
+
+		simfunc = function (a, b) {
+			if (a === b) {
+				return 1;
+			} else {
+				return -1/3;
+			}
+		};
+
+		gss = function (k) {
+			return -(1.0 + 1/3 * k);
+		};
+
+		res = sw(seq1, seq2, gss, simfunc);
+
+		assert.deepEqual(res, [
+			{i: 9, j: 7},
+			{i: 8, j: 6},
+			{i: 7, j: 5},
+			{i: 6, j: 4},
+			{i: 5, j: 4},
+			{i: 4, j: 3},
+			{i: 3, j: 2}
+		]);
+
+		done();
+	});
 });

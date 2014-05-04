@@ -54,7 +54,7 @@ function sw(seq1, seq2, gss, simfunc) {
     }
   }
 
-  console.log(T);
+  console.log(H);
 
   longestmatch = restorelm(H, T);
 
