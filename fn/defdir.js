@@ -6,9 +6,9 @@ function defdir(curscore, mmscore, delscore, inscore) {
   if (curscore === mmscore) {
     curdir = dir.diag;
   } else if (curscore === delscore) {
-    curdir = dir.left;
-  } else if (curscore === inscore) {
     curdir = dir.up;
+  } else if (curscore === inscore) {
+    curdir = dir.left;
   }
 
   if (curscore < 0) {

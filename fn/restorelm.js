@@ -29,16 +29,18 @@ function restorelm(H, T) {
   for (i = maxi, j = maxj; H[i][j];) {
     walk.push({ i: i - 1, j: j - 1 });
 
-    console.log(T[i][j], i, j, max, T);
     switch(T[i][j]) {
       case dir.diag:
+        console.log('going diag');
         i--;
         j--;
         break;
       case dir.left:
+        console.log('going left');
         j--;
         break;
       case dir.up:
+        console.log('going up');
         i--;
         break;
       default:

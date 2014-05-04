@@ -4,7 +4,7 @@ var insertion = require('./fn/insertion');
 var defdir = require('./fn/defdir');
 var restorelm = require('./fn/restorelm');
 
-var dir = require('./obj/direction');
+var dir = require('./obj/dir');
 
 function sw(seq1, seq2, gss, simfunc) {
   var len1, len2;
@@ -25,12 +25,12 @@ function sw(seq1, seq2, gss, simfunc) {
   H[0] = [];
   T[0] = [];
 
-  for (i = 0; i < len2; i++) {
+  for (i = 0; i < len2 + 1; i++) {
     H[0][i] = 0;
     T[0][i] = dir.none;
   }
 
-  for (i = 0; i < len1; i++) {
+  for (i = 0; i < len1 + 1; i++) {
     if (!H[i]) {
       H[i] = [];
       T[i] = [];
@@ -46,10 +46,15 @@ function sw(seq1, seq2, gss, simfunc) {
       delscore = deletion(H, i, j, gss);
       inscore = insertion(H, i, j, gss);
 
+      if (i === 3 && j === 1)
+      console.log(mmscore, delscore, inscore);
+
       H[i][j] = Math.max(0, mmscore, delscore, inscore);
       T[i][j] = defdir(H[i][j], mmscore, delscore, inscore);
     }
   }
+
+  console.log(T);
 
   longestmatch = restorelm(H, T);
 

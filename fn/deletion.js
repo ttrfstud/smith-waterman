@@ -6,7 +6,7 @@ function deletion(H, i, j, gss) {
 
   max = -1;
 
-  for (k = i; k >=0; k--) {
+  for (k = i - 1; k >=0; k--) {
     if (max < H[k][j]) {
       max = H[k][j];
       maxidx = k;

@@ -6,14 +6,12 @@ function insertion(H, i, j, gss) {
 
   max = -1;
 
-  for (l = j; l >= 0; l--) {
+  for (l = j - 1; l >= 0; l--) {
     if(max < H[i][l]) {
       max = H[i][l];
       maxidx = l;
     }
   } 
-
-  console.log(j, maxidx);
 
   max = max + gss(j - maxidx);
 

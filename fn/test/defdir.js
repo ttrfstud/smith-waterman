@@ -20,7 +20,7 @@ describe('defdir', function () {
     done();
   });
 
-  it('test right', function (done) {
+  it('test up', function (done) {
     var curscore;
     var mmscore;
     var delscore;
@@ -31,12 +31,12 @@ describe('defdir', function () {
     delscore = 4;
     inscore = 2;
 
-    assert.equal(defdir(curscore, mmscore, delscore, inscore), dir.left);
+    assert.equal(defdir(curscore, mmscore, delscore, inscore), dir.up);
 
     done();
   });
 
-  it('test up', function (done) {
+  it('test left', function (done) {
     var curscore;
     var mmscore;
     var delscore;
@@ -47,7 +47,7 @@ describe('defdir', function () {
     delscore = 2;
     inscore = 4;
 
-    assert.equal(defdir(curscore, mmscore, delscore, inscore), dir.up);
+    assert.equal(defdir(curscore, mmscore, delscore, inscore), dir.left);
 
     done();
   });
@@ -79,7 +79,7 @@ describe('defdir', function () {
     delscore = 4;
     inscore = 4;
 
-    assert.equal(defdir(curscore, mmscore, delscore, inscore), dir.left);
+    assert.equal(defdir(curscore, mmscore, delscore, inscore), dir.up);
 
     done();
   });

@@ -17,7 +17,7 @@ describe('deletion', function () {
 			[0, 4],
 			[0, 2],
 			[0, 7],
-			[0, NaN],
+			[0, 100],
 		];
 
 		i = 4;
