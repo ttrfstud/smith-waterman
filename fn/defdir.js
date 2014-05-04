@@ -1,17 +1,21 @@
-var directions = require('../obj/direction');
+var dir = require('../obj/dir');
 
 function defdir(curscore, mmscore, delscore, inscore) {
-  var dir;
+  var curdir;
 
   if (curscore === mmscore) {
-    dir = directions.diag;
+    curdir = dir.diag;
   } else if (curscore === delscore) {
-    dir = directions.left;
+    curdir = dir.left;
   } else if (curscore === inscore) {
-    dir = directions.up;
+    curdir = dir.up;
   }
 
-  return dir;
+  if (curscore < 0) {
+    curdir = dir.none;
+  }
+
+  return curdir;
 }
 
 module.exports = defdir;

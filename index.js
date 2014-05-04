@@ -4,6 +4,8 @@ var insertion = require('./fn/insertion');
 var defdir = require('./fn/defdir');
 var restorelm = require('./fn/restorelm');
 
+var dir = require('./obj/direction');
+
 function sw(seq1, seq2, gss, simfunc) {
   var len1, len2;
   var i, j;
@@ -25,7 +27,7 @@ function sw(seq1, seq2, gss, simfunc) {
 
   for (i = 0; i < len2; i++) {
     H[0][i] = 0;
-    T[0][i] = 0;
+    T[0][i] = dir.none;
   }
 
   for (i = 0; i < len1; i++) {
@@ -35,7 +37,7 @@ function sw(seq1, seq2, gss, simfunc) {
     }
 
     H[i][0] = 0;
-    T[i][0] = 0;
+    T[i][0] = dir.none;
   }
 
   for (i = 1; i < len1 + 1; i++) {

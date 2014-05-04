@@ -6,14 +6,14 @@ function deletion(H, i, j, gss) {
 
   max = -1;
 
-  for (k = j; k >=0; k--) {
-    if (max < H[i][k]) {
-      max = H[i][k];
+  for (k = i; k >=0; k--) {
+    if (max < H[k][j]) {
+      max = H[k][j];
       maxidx = k;
     }
   }
 
-  max = max + gss(maxidx);
+  max = max + gss(i - maxidx);
 
   return max;
 }

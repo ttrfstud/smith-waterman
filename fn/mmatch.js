@@ -9,7 +9,7 @@ function mmatch(H, i, j, seq1, seq2, simfunc) {
   seq1cur = seq1[i - 1];
   seq2cur = seq2[j - 1];
 
-  simil = simfuc(seq1cur, seq2cur);
+  simil = simfunc(seq1cur, seq2cur);
 
   curres = prevres + simil;
 

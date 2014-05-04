@@ -1,4 +1,4 @@
-var direction = require('../obj/direction');
+var dir = require('../obj/dir');
 
 function restorelm(H, T) {
   var len1, len2;
@@ -26,18 +26,19 @@ function restorelm(H, T) {
   }
 
 
-  for (i = maxi, j = maxj; i > 0 && j > 0;) {
+  for (i = maxi, j = maxj; H[i][j];) {
     walk.push({ i: i - 1, j: j - 1 });
 
+    console.log(T[i][j], i, j, max, T);
     switch(T[i][j]) {
-      case direction.diag:
+      case dir.diag:
         i--;
         j--;
         break;
-      case direction.left:
+      case dir.left:
         j--;
         break;
-      case direction.up:
+      case dir.up:
         i--;
         break;
       default:
