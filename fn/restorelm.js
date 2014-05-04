@@ -31,16 +31,13 @@ function restorelm(H, T) {
 
     switch(T[i][j]) {
       case dir.diag:
-        console.log('going diag');
         i--;
         j--;
         break;
       case dir.left:
-        console.log('going left');
         j--;
         break;
       case dir.up:
-        console.log('going up');
         i--;
         break;
       default:

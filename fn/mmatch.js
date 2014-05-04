@@ -11,8 +11,6 @@ function mmatch(H, i, j, seq1, seq2, simfunc) {
 
   simil = simfunc(seq1cur, seq2cur);
 
-  console.log('squr', seq1cur, seq2cur, simil, i, j, seq1, seq2);
-
   curres = prevres + simil;
 
   return curres;

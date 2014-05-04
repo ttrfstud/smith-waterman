@@ -43,6 +43,7 @@ describe('sw', function () {
 		done();
 	});
 
+	// http://www.cmb.usc.edu/papers/msw_papers/msw-042.pdf
 	it('paper test', function (done) {
 		var seq1;
 		var seq2;
