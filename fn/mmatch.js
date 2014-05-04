@@ -4,7 +4,7 @@ function mmatch(H, i, j, seq1, seq2, simfunc) {
   var seq1cur, seq2cur;
   var simil;
 
-  prevres = H[i][j];
+  prevres = H[i - 1][j - 1];
 
   seq1cur = seq1[i - 1];
   seq2cur = seq2[j - 1];
