@@ -46,15 +46,10 @@ function sw(seq1, seq2, gss, simfunc) {
       delscore = deletion(H, i, j, gss);
       inscore = insertion(H, i, j, gss);
 
-      if (i === 3 && j === 1)
-      console.log(mmscore, delscore, inscore);
-
       H[i][j] = Math.max(0, mmscore, delscore, inscore);
       T[i][j] = defdir(H[i][j], mmscore, delscore, inscore);
     }
   }
-
-  console.log(H);
 
   longestmatch = restorelm(H, T);
 
